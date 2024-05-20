@@ -1,0 +1,17 @@
+<!-- templates/edit_certification.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Certification</title>
+</head>
+<body>
+    <h1>Add Certification</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'portfolio' %}">Back to Portfolio</a>
+</body>
+</html>

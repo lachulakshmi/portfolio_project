@@ -1,0 +1,17 @@
+<!-- templates/edit_work_experience.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Work Experience</title>
+</head>
+<body>
+    <h1>Add Work Experience</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'portfolio' %}">Back to Portfolio</a>
+</body>
+</html>

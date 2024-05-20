@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Portfolio</title>
+</head>
+<body>
+
+   <h1>Your Portfolio</h1>
+
+    <h2>Projects</h2>
+    <ul>
+        {% for project in projects %}
+            <li>
+                <strong>Title:</strong> {{ project.title }}<br>
+                <strong>Description:</strong> {{ project.description }}<br>
+                {% if project.link %}
+                    <strong>Link:</strong> <a href="{{ project.link }}">{{ project.link }}</a><br>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_project' %}">Add Project</a>
+
+    <h2>Work Experience</h2>
+    <ul>
+        {% for work_experience in work_experiences %}
+            <li>
+                <strong>Company:</strong> {{ work_experience.company_name }}<br>
+                <strong>Role:</strong> {{ work_experience.position }}<br>
+                <strong>Start date:</strong> {{ work_experience.start_date }}<br>
+                <strong>End date:</strong> {% if work_experience.end_date %}{{ work_experience.end_date }}{% else %}Present{% endif %}<br>
+                <strong>Description:</strong> {{ work_experience.description }}<br>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_work_experience' %}">Add Work Experience</a>
+
+    <h2>Education</h2>
+    <ul>
+        {% for education in educations %}
+            <li>
+                <strong>Institution:</strong> {{ education.institution_name }}<br>
+                <strong>Degree:</strong> {{ education.degree }}<br>
+                <strong>Start date:</strong> {{ education.start_date }}<br>
+                <strong>End date:</strong> {% if education.end_date %}{{ education.end_date }}{% else %}Present{% endif %}<br>
+                <strong>Description:</strong> {{ education.description }}<br>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_education' %}">Add Education</a>
+
+    <h2>Certifications</h2>
+    <ul>
+        {% for certification in certifications %}
+            <li>
+                <strong>Name:</strong> {{ certification.name }}<br>
+                <strong>Institution:</strong> {{ certification.issuer }}<br>
+                <strong>Date obtained:</strong> {{ certification.date_issued }}<br>
+                <strong>Description:</strong> {{ certification.description }}<br>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_certification' %}">Add Certification</a>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
